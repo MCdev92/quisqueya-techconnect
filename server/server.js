@@ -13,6 +13,11 @@ const app = express();
 // Define port from environment or default to 5000
 const PORT = process.env.PORT || 5000;
 
+// Import the techCareersRoutes module, which contains all routes related to tech careers
+// Use the techCareersRoutes for any requests starting with '/api/techcareers'
+const techCareersRoutes = require('./routes/techCareersRoutes');
+app.use('/api/techcareers', techCareersRoutes);
+
 // Middleware
 app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // Parse incoming JSON requests
